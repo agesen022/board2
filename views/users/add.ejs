@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/destyle.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <h1><%= title %></h1>
+    <div>
+        <ol>
+            <% if (err){ %>
+                <% for (let i of err.errors){ %>
+                <li><%= i.message %></li>
+                <% } %>
+            <% } %>
+        </ol>
+    </div>
+    <form method="POST" action="/users/add">
+        <div>
+            <label for="namae">NAME</label>
+            <input type="text" id="namae" name="name" value="<%= form.name %>">
+            <ul>
+                <% if (err){ %>
+                    <% for (let i of err.get("name")){ %>
+                    <li><%= i.message %></li>
+                <% }} %>
+            </ul>
+        </div>
+        <div>
+            <label for="pasu">PASSWORD</label>
+            <input type="text" id="pasu" name="pass" value="<%= form.pass %>">
+            <ul>
+                <% if (err){ %>
+                    <% for (let i of err.get("pass")){ %>
+                    <li><%= i.message %></li>
+                <% }} %>
+            </ul>
+        </div>
+        <div>
+            <label for="meru">MAIL</label>
+            <input type="text" id="meru" name="mail" value="<%= form.mail %>">
+            <ul>
+                <% if (err){ %>
+                    <% for (let i of err.get("mail")){ %>
+                    <li><%= i.message %></li>
+                <% }} %>
+            </ul>
+        </div>
+        <div>
+            <label for="toshi">AGE</label>
+            <input type="text" id="toshi" name="age" value="<%= form.age %>">
+            <ul>
+                <% if (err){ %>
+                    <% for (let i of err.get("age")){ %>
+                    <li><%= i.message %></li>
+                <% }} %>
+            </ul>
+        </div>
+        <input type="submit" value="作成">
+    </form>
+</body>
+</html>

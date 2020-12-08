@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/destyle.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <h1><%= title %></h1>
+    <p>変更する場合は新しい値を入力してください。</p>
+    <form method="POST" action="/hello/edit">
+        <input type="hidden" value="<%= mydata.id %>" name="id">
+        <input type="hidden" name="edit1" value="ee">
+        <div>
+            <label for="name">NAME:</label>
+            <input type="text" id="name" value="<%= mydata.name %>" name="namae">
+        </div>
+        <div>
+            <label for="mail">MAIL:</label>
+            <input type="text" id="mail" value="<%= mydata.mail %>" name="meru">
+        </div>
+        <div>
+            <label for="age">AGE:</label>
+            <input type="text" id="age" value="<%= mydata.age %>" name="toshi">
+        </div>
+        <input type="submit" value="送信">
+    </form>
+</body>
+</html>

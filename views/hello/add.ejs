@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/destyle.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header>
+        <h1><%= title %></h1>
+    </header>
+    <p><%- content %></p>
+    <form method="POST" action="/hello/add">
+        <div class="name">
+            <label for="name">NAME</label>
+            <input type="text" id="name" name="namae" value="<%= form.namae %>">
+        </div>
+        <div class="mail">
+            <label for="mail">MAIL</label>
+            <input type="text" id="mail" name="meru" value="<%= form.meru %>">
+        </div>
+        <div class="age">
+            <label for="age">AGE</label>
+            <input type="text" id="age" name="toshi" value="<%= form.toshi %>">
+        </div>
+        <input type="submit" value="作成">
+    </form>
+    <div>
+
+    </div>
+</body>
+</html>

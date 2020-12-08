@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/destyle.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <h1><%= title %></h1>
+    <p>検索条件<%= condition %><br>FIND</p>
+    <form method="POST" action="/hello/find">
+        <input type="text" name="jouken">
+        <input type="submit" value="更新">
+    </form>
+    <table>
+        <tr>
+            <th>id</th>
+            <td>name</td>
+            <td>mail</td>
+            <td>age</td>
+        </tr>
+        <% for (let i of mydata){ %>
+            <tr>
+                <th><%= i.id %></th>
+                <td><%= i.name %></td>
+                <td><%= i.mail %></td>
+                <td><%= i.age %></td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>

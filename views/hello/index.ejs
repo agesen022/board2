@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="こんにちはpage">
+    <title><%= title %></title>
+    <!--CSS-->
+    <link rel="stylesheet" href="/stylesheets/destyle.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <h1><%= title %></h1>
+    <div>
+        <%- content %>
+    </div>
+    <div>
+        <form method="POST" action="http://localhost:3000/hello/post">
+            <label for="msg">Message:</label>
+            <input type="text" name="message" id="msg">
+            <input type="submit" value="送信">
+        </form>
+    </div>
+    <div>
+        <p>ページリンク</p>
+        <p>・<a href="/hello/add">追加</a></p>
+        <form method="POST" action="/hello/edit">
+            <input type="text" name="id" placeholder="id">
+            <input type="submit" value="編集">
+        </form>
+        <form method="POST" action="/hello/delete">
+            <input type="text" placeholder="id" name="id">
+            <input type="submit" value="削除">
+        </form>
+        <p>・<a href="/hello/find">検索</a></p>
+    </div>
+</body>
+</html>
